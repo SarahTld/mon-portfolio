@@ -30,8 +30,10 @@ jobs:
       - name: Clean npm cache
         run: npm cache clean --force
 
-      - name: Install dependencies (no optional)
-        run: npm ci --no-optional --ignore-scripts=false
+      - name: Install dependencies
+        env:
+          NPM_CONFIG_OPTIONAL: "true"
+        run: npm ci
 
       - name: Generate static site
         run: npx nuxi generate
