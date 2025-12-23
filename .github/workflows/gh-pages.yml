@@ -27,8 +27,8 @@ jobs:
           node-version: 18
           cache: npm
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies (no optional)
+        run: npm ci --no-optional
 
       - name: Generate static site
         run: npx nuxi generate
