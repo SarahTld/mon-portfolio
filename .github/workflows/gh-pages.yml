@@ -24,11 +24,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
 
+      - name: Clean npm cache
+        run: npm cache clean --force
+
       - name: Install dependencies (no optional)
-        run: npm ci --no-optional
+        run: npm ci --no-optional --ignore-scripts=false
 
       - name: Generate static site
         run: npx nuxi generate
