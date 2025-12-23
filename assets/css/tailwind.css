@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent;
+  }
+  
+  .bg-dots {
+    background-image: radial-gradient(circle, rgba(156, 146, 172, 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
